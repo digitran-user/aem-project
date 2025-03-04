@@ -35,7 +35,6 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
                     disableLazyLoading="false"
-                    enableAssetDelivery="true"
                     allowUpload="false"
                     altValueFromDAM="true"
                     displayPopupTitle="true"
@@ -342,13 +341,4 @@
             </page>
         </components>
     </capstoneproject>
-    <wcm jcr:primaryType="nt:unstructured">
-        <foundation jcr:primaryType="nt:unstructured">
-            <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured">
-            
-                </responsivegrid>
-            </components>
-        </foundation>
-    </wcm>
 </jcr:root>
