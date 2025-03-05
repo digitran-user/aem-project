@@ -26,8 +26,16 @@ export const Default: Story = {
       label: "Learn More",
       url: "#",
     },
+    contentPosition: 'center',
     imagePosition: "left",
     backgroundColor: "white",
   },
 }
 
+export const ImageOnLeft: Story = {
+  args: {
+    ...Default.args,
+    imagePosition: "right",
+    contentPosition: 'top',
+  },
+}

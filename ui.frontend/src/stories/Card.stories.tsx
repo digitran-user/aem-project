@@ -37,6 +37,14 @@ export const Horizontal: Story = {
   },
 }
 
+export const HorizontalRight: Story = {
+  args: {
+    ...Default.args,
+    variant: "horizontal",
+    alignment: "right",
+  },
+}
+
 export const Minimal: Story = {
   args: {
     ...Default.args,

@@ -13,6 +13,7 @@ export interface CardProps {
   }
   tags?: string[]
   variant?: "default" | "horizontal" | "minimal"
+  alignment?: "left" | "right"
   className?: string
 }
 
@@ -29,6 +30,7 @@ export const Card: React.FC<CardProps> = ({
   },
   tags = [],
   variant = "default",
+  alignment = "left",
   className = "",
 }) => {
   const renderDefault = () => (
@@ -62,7 +64,7 @@ export const Card: React.FC<CardProps> = ({
   )
 
   const renderHorizontal = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className}`}>
+    <div className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
       <div className="sm:w-1/3">
         <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-48 sm:h-full object-cover" />
       </div>
@@ -80,7 +82,7 @@ export const Card: React.FC<CardProps> = ({
           </div>
         )}
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-gray-600 mb-4" dangerouslySetInnerHTML={{__html: description}} />
         {cta && (
           <a
             href={cta.url}

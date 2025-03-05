@@ -12,6 +12,7 @@ export interface ImageTextProps {
     url: string
   }
   imagePosition?: "left" | "right"
+  contentPosition?: "top" | "center" | "bottom"
   backgroundColor?: string
 }
 
@@ -26,14 +27,20 @@ export const ImageText: React.FC<ImageTextProps> = ({
     label: "Learn More",
     url: "#",
   },
+  contentPosition = "center",
   imagePosition = "left",
   backgroundColor = "white",
 }) => {
+  const contentPositionArray = {
+    center : 'center',
+    top: 'start',
+    bottom: 'end',
+  }
   return (
     <div className={`bg-${backgroundColor}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`flex flex-col ${imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"} items-center py-16 lg:py-24`}
+          className={`flex flex-col ${imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"} items-${contentPositionArray[contentPosition]} py-16 lg:py-24`}
         >
           <div className="w-full lg:w-1/2 lg:pr-8 lg:pl-8">
             <img
@@ -44,7 +51,7 @@ export const ImageText: React.FC<ImageTextProps> = ({
           </div>
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:pr-8 lg:pl-8">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{title}</h2>
-            <p className="mt-4 text-lg text-gray-500">{content}</p>
+            <p className="mt-4 text-lg text-gray-500" dangerouslySetInnerHTML={{__html: content}} />
             {cta && (
               <div className="mt-8">
                 <a

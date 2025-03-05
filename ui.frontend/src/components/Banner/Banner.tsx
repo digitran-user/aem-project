@@ -39,7 +39,7 @@ export const Banner: React.FC<BannerProps> = ({
         className={`relative z-10 px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col ${alignmentClasses[alignment]}`}
       >
         <h1 className={`text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-${textColor}`}>{title}</h1>
-        <p className={`mt-6 text-xl max-w-2xl text-${textColor}-200`}>{description}</p>
+        <p className={`mt-6 text-xl max-w-2xl text-${textColor}-200`} dangerouslySetInnerHTML={{__html: description}} />
         {cta && (
           <div className="mt-10">
             <a
