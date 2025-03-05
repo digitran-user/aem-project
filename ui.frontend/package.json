@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "prod": "tsc && vite build && clientlib --verbose",
+    "prod": "tsc && vite build --config vite.config.build.ts && clientlib --verbose",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

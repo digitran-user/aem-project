@@ -57,11 +57,11 @@ module.exports = {
                 // Copy entrypoint scripts and stylesheets into the respective ClientLib
                 // directories
                 js: {
-                    files: ['./assets/*.js'],
+                    files: ['*.js'],
                     flatten: false,
                 },
                 css: {
-                    files: ['./assets/*.css'],
+                    files: ['*.css'],
                     flatten: false,
                 },
 
