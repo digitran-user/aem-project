@@ -21,7 +21,7 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.capstoneproject</groupId>
+        <groupId>com.capstone</groupId>
         <artifactId>capstoneproject</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -51,16 +51,24 @@
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
-                    <group>com.capstoneproject</group>
+                    <group>com.capstone</group>
                     <name>capstoneproject.ui.apps</name>
                     <packageType>application</packageType>
                     <repositoryStructurePackages>
                         <repositoryStructurePackage>
-                            <groupId>com.capstoneproject</groupId>
+                            <groupId>com.capstone</groupId>
                             <artifactId>capstoneproject.ui.apps.structure</artifactId>
                         </repositoryStructurePackage>
                     </repositoryStructurePackages>
                     <dependencies>
+                        <dependency>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.content</artifactId>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.config</artifactId>
+                        </dependency>
                     </dependencies>
                 </configuration>
             </plugin>
@@ -107,13 +115,13 @@
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
-            <groupId>com.capstoneproject</groupId>
+            <groupId>com.capstone</groupId>
             <artifactId>capstoneproject.core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.capstoneproject</groupId>
+            <groupId>com.capstone</groupId>
             <artifactId>capstoneproject.ui.frontend</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
@@ -121,15 +129,47 @@
 
 
         <dependency>
-            <groupId>com.capstoneproject</groupId>
+            <groupId>com.capstone</groupId>
             <artifactId>capstoneproject.ui.apps.structure</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
 
         <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.content</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.config</artifactId>
+            <type>zip</type>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>aem-sdk-api</artifactId>
+            <artifactId>uber-jar</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-taglib</artifactId>
         </dependency>
 
         <!-- HTL dependencies needed for the HTL Maven Plugin source code generation -->
