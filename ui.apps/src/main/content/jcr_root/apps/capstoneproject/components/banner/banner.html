@@ -14,10 +14,7 @@
     limitations under the License.
 */-->
 <div class="cmp-helloworld" data-cmp-is="helloworld">
-     First Component
-    <div class="cmp-helloworld__item" data-sly-use.model="com.capstone.core.models.BannerModel">
-        <p class="cmp-helloworld__item-label">Model message:</p>
-        <pre class="cmp-helloworld__item-output"data-cmp-hook-helloworld="model">${model.jsonObj}</pre>
-        <banner aem-data="${model.jsonObj}"></banner>
+       <div class="cmp-helloworld__item" data-sly-use.model="com.capstone.core.models.BannerModel">
+             <web-banner aem-data="${model.jsonObj}"></web-banner>
     </div>
 </div>
