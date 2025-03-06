@@ -10,6 +10,9 @@ import { ImageText } from "./components/ImageText/ImageText";
 import { Card } from "./components/Card/Card";
 import { Location } from "./components/Location/Location";
 import { ContactForm } from "./components/ContactForm/ContactForm";
+import { Accordion } from "./components/Accordion/Accordion"
+import { Tabs } from "./components/Tabs/Tabs"
+import { Anchoring } from "./components/Anchoring/Anchoring"
 
 // Helper function to create web components from React components
 function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: string) {
@@ -74,6 +77,9 @@ export function defineCustomElements() {
     createWebComponent(Card, "web-card");
     createWebComponent(Location, "web-location");
     createWebComponent(ContactForm, "web-contact-form");
+    createWebComponent(Accordion, "web-accordion");
+    createWebComponent(Tabs, "web-tabs");
+    createWebComponent(Anchoring, "web-Anchoring");
     console.log("All web components defined successfully");
   } catch (error) {
     console.error("Error defining web components:", error);

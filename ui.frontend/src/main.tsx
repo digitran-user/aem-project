@@ -11,6 +11,8 @@ export * from "./components/ImageText/ImageText"
 export * from "./components/Card/Card"
 export * from "./components/Location/Location"
 export * from "./components/ContactForm/ContactForm"
+export * from "./components/Accordion/Accordion"
+export * from "./components/Tabs/Tabs"
 
 // Register all web components
 defineCustomElements()
