@@ -5,11 +5,9 @@ import lombok.Setter;
 
 @Setter
 @Builder
-public class Cta {
+public class Image {
 
-    private String label;
+    private String src;
 
-    private String url;
-
-
+    private String alt;
 }
