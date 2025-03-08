@@ -13,7 +13,8 @@ import { ContactForm } from "./components/ContactForm/ContactForm";
 import { Accordion } from "./components/Accordion/Accordion"
 import { Tabs } from "./components/Tabs/Tabs"
 import { Anchoring } from "./components/Anchoring/Anchoring"
-
+import { MegaMenu } from "./components/MegaMenu/MegaMenu"
+import { ColumnController } from "./components/ColumnController/ColumnController"
 // Helper function to create web components from React components
 function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: string) {
   class WebComponent extends HTMLElement {
@@ -80,6 +81,8 @@ export function defineCustomElements() {
     createWebComponent(Accordion, "web-accordion");
     createWebComponent(Tabs, "web-tabs");
     createWebComponent(Anchoring, "web-Anchoring");
+    createWebComponent(MegaMenu, "web-mega-menu");
+    createWebComponent(ColumnController, "web-column-controller")
     console.log("All web components defined successfully");
   } catch (error) {
     console.error("Error defining web components:", error);

@@ -13,6 +13,9 @@ export * from "./components/Location/Location"
 export * from "./components/ContactForm/ContactForm"
 export * from "./components/Accordion/Accordion"
 export * from "./components/Tabs/Tabs"
+export * from "./components/Anchoring/Anchoring"
+export * from "./components/MegaMenu/MegaMenu"
+export * from "./components/ColumnController/ColumnController"
 
 // Register all web components
 defineCustomElements()
