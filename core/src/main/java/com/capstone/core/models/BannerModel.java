@@ -100,15 +100,13 @@ public class BannerModel {
             wrapper.setAlignment(alignment);
             wrapper.setBackgroundImage(backgroundImage);
 
-            Cta ctaData = new Cta();
-            ctaData.setLabel(bannerCtaLabel);
-            ctaData.setUrl(bannerCtaLink);
+            Cta ctaData = Cta.builder().label(bannerCtaLabel).url(bannerCtaLink).build();
 
             wrapper.setCta(ctaData);
             wrapper.setDescription(description);
             return gson.toJson(wrapper);
         } catch (Exception e) {
-            LOG.error("Exception while rendering Banner component", e.getMessage());
+            LOG.error("Exception while rendering Banner component", e);
             return "{}";
         }
     }
