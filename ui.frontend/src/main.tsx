@@ -15,6 +15,7 @@ export * from "./components/Accordion/Accordion"
 export * from "./components/Tabs/Tabs"
 export * from "./components/Anchoring/Anchoring"
 export * from "./components/MegaMenu/MegaMenu"
+export * from "./components/LinkList/LinkList"
 export * from "./components/ColumnController/ColumnController"
 
 // Register all web components
