@@ -15,75 +15,60 @@
  */
 package com.capstone.core.models;
 
+import java.util.List;
 
 import javax.annotation.PostConstruct;
-
-import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.capstone.core.pojo.BannerWrapper;
-import com.capstone.core.pojo.Cta;
+import com.capstone.core.pojo.Hours;
+import com.capstone.core.pojo.LocationWrapper;
 import com.google.gson.Gson;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import lombok.Getter;
 import lombok.Setter;
 
 
+
+@Setter
+@Getter
 @Model(adaptables = Resource.class)
-public class BannerModel {
+public class LocationModel {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String fallBackImage;
-
-    @ValueMapValue
-    @Optional
-    @Getter
-    @Setter
     private String title;
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String description;
+    private String address;
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String backgroundImage;
+    private String phone;
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String altText;
+    private String email; 
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String bannerCtaLabel;
+    private String mapEmbedUrl; 
 
     @ValueMapValue
     @Optional
-    @Getter
-    @Setter
-    private String bannerCtaLink;
+    private Boolean showMap;
 
-    @ValueMapValue
+    @ChildResource
     @Optional
-    @Getter
-    @Setter
-    private String alignment;
+    private List<Hours> businesshours;
 
 
     @PostConstruct
@@ -95,18 +80,20 @@ public class BannerModel {
      public String getJsonObj() {
         Gson gson = new Gson();
         try {
-            BannerWrapper wrapper = new BannerWrapper();
+
+            LocationWrapper wrapper = new LocationWrapper();
+            wrapper.setAddress(address);
+            wrapper.setEmail(email);
+            wrapper.setMapEmbed(mapEmbedUrl);
+            wrapper.setPhone(phone);
             wrapper.setTitle(title);
-            wrapper.setAlignment(alignment);
-            wrapper.setBackgroundImage(backgroundImage);
-
-            Cta ctaData = Cta.builder().label(bannerCtaLabel).url(bannerCtaLink).build();
-
-            wrapper.setCta(ctaData);
-            wrapper.setDescription(description);
+            wrapper.setShowMap(showMap);
+            wrapper.setHours(businesshours);
+           
+        
             return gson.toJson(wrapper);
         } catch (Exception e) {
-            LOG.error("Exception while rendering Banner component", e);
+            LOG.error("Exception while rendering Banner component", e.getMessage());
             return "{}";
         }
     }
