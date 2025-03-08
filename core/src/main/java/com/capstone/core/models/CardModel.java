@@ -35,6 +35,9 @@ public class CardModel {
     private String description;
 
     @ValueMapValue
+    private String text;
+
+    @ValueMapValue
     private String linkTarget;
 
     @ValueMapValue
@@ -55,7 +58,7 @@ public class CardModel {
             CardWrapper wrapper = CardWrapper
                     .builder()
                     .image( Image.builder().src(fileReference).alt(alt).build())
-                    .cta( Cta.builder().url(linkURL).label(linkTarget).build())
+                    .cta( Cta.builder().url(linkURL).label(text).build())
                     .title(title)
                     .description(description)
                     .variant(variant)
