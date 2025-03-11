@@ -1,23 +1,23 @@
 import React from "react"
 
 export type ColumnLayout =
-  | "100" // 1 column: 100%
-  | "50-50" // 2 columns: 50% 50%
+  | "100"
+  | "50-50"
   | "75-25"
-  | "25-75" // 2 columns: 75% 25% or 25% 75%
-  | "33-33-33" // 3 columns: 33.3% 33.3% 33.3%
+  | "25-75"
+  | "33-33-33"
   | "50-25-25"
   | "25-50-25"
-  | "25-25-50" // 3 columns with different distributions
-  | "25-25-25-25" // 4 columns: 25% 25% 25% 25%
+  | "25-25-50"
+  | "25-25-25-25"
   | "40-20-20-20"
   | "20-40-20-20"
   | "20-20-40-20"
-  | "20-20-20-40" // 4 columns with different distributions
+  | "20-20-20-40"
 
 export interface ColumnControllerProps {
   layout: ColumnLayout
-  children?: React.ReactNode
+  children: React.ReactNode
   gap?: number
   className?: string
   columnClassName?: string
@@ -25,7 +25,7 @@ export interface ColumnControllerProps {
 
 export const ColumnController: React.FC<ColumnControllerProps> = ({
   layout = "100",
-  children = null,
+  children,
   gap = 16,
   className = "",
   columnClassName = "",
@@ -72,6 +72,16 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
     return layout.split("-").length
   }
 
+  // Render only the number of columns specified by the layout
+  const renderColumns = () => {
+    const columnCount = getColumnCount()
+    return childrenArray.slice(0, columnCount).map((child, index) => (
+      <div key={index} className={`column ${columnClassName}`}>
+        {child}
+      </div>
+    ))
+  }
+
   return (
     <div
       className={`grid ${className}`}
@@ -80,11 +90,7 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
         gap: `${gap}px`,
       }}
     >
-      {childrenArray.slice(0, getColumnCount()).map((child, index) => (
-        <div key={index} className={`column ${columnClassName}`}>
-          {child}
-        </div>
-      ))}
+      {renderColumns()}
     </div>
   )
 }
