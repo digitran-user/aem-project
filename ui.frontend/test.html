@@ -6,9 +6,94 @@
     <title>AEM React Components Test</title>
     <link rel="stylesheet" href="./dist/aem-react-components.css" type="text/css" >
     <script src="./dist/aem-react-components.iife.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-column {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <web-banner aem-data='{"title": "Test Banner 1", "description": "This is a test banner", "backgroundImage": "./public/placeholder.svg?height=400&width=1600"}'></web-banner>
+    <h1>Column Controller Examples</h1>
+    <web-banner aem-data='{"title": "Test Banner", "description": "This is a test banner"}'></web-banner>
+    
+    <div class="section">
+        <h2>Two Columns (50-50)</h2>
+        
+        <web-column-controller aem-data='{
+            "layout": "50-50",
+            "gap": 16
+        }'>
+            <div class="demo-column">Column 1</div>
+            <div class="demo-column">Column 2</div>
+            <div class="demo-column">Extra Column (not displayed)</div>
+            <div class="demo-column">Extra Column (not displayed)</div>
+        </web-column-controller>
+    </div>
+
+    <div class="section">
+        <h2>Three Columns (33-33-33)</h2>
+        <web-column-controller aem-data='{
+            "layout": "33-33-33",
+            "gap": 16
+        }'>
+            <div class="demo-column">Column 1</div>
+            <div class="demo-column">Column 2</div>
+            <div class="demo-column">Column 3</div>
+            <div class="demo-column">Extra Column (not displayed)</div>
+        </web-column-controller>
+    </div>
+
+    <div class="section">
+        <h2>Three Columns (25-50-25)</h2>
+        <web-column-controller aem-data='{
+            "layout": "25-50-25",
+            "gap": 16
+        }'>
+            <div class="demo-column">Column 1 (25%)</div>
+            <div class="demo-column">Column 2 (50%)</div>
+            <div class="demo-column">Column 3 (25%)</div>
+            <div class="demo-column">Extra Column (not displayed)</div>
+        </web-column-controller>
+    </div>
+
+    <div class="section">
+        <h2>Four Columns (25-25-25-25)</h2>
+        <web-column-controller aem-data='{
+            "layout": "25-25-25-25",
+            "gap": 16
+        }'>
+            <div class="demo-column">Column 1</div>
+            <div class="demo-column">Column 2</div>
+            <div class="demo-column">Column 3</div>
+            <div class="demo-column">Column 4</div>
+        </web-column-controller>
+    </div>
+
+    <div class="section">
+        <h2>Four Columns (40-20-20-20)</h2>
+        <web-column-controller aem-data='{
+            "layout": "40-20-20-20",
+            "gap": 16
+        }'>
+            <div class="demo-column">Column 1 (40%)</div>
+            <div class="demo-column">Column 2 (20%)</div>
+            <div class="demo-column">Column 3 (20%)</div>
+            <div class="demo-column">Column 4 (20%)</div>
+        </web-column-controller>
+    </div>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Header } from "../components/Header/Header"
 import { Banner } from "../components/Banner/Banner"
-import { ColumnController } from "../components/ColumnController/ColumnController"
+import { ColumnController, ColumnLayout } from "../components/ColumnController/ColumnController"; // Adjust path
 import { Anchoring } from "../components/Anchoring/Anchoring"
 import { LinkList } from "../components/LinkList/LinkList"
 import { Accordion } from "../components/Accordion/Accordion"
@@ -20,6 +20,16 @@ const meta: Meta = {
 
 export default meta
 type Story = StoryObj
+
+// Define the props type for the story
+interface ColumnControllerStoryProps {
+  layout: ColumnLayout;
+  gap: number;
+  className: string;
+  columnClassName: string;
+  childrenCount: number;
+}
+
 
 // Sample data for the components
 const navigationItems = [
@@ -238,101 +248,7 @@ export const HomePage: Story = {
 
         {/* Content with Sidebar - Constrained width */}
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <ColumnController layout="75-25" gap={32}>
-            {/* Main Content Column */}
-            <div>
-              {/* Features Section */}
-              <section id="features-section" className="mb-32">
-                <h2 className="text-3xl font-bold mb-8">Our Features</h2>
-                <ColumnController layout="33-33-33" gap={24}>
-                  <Card
-                    title="Easy Integration"
-                    description="Seamlessly integrate with your existing systems and workflows."
-                    image={{ src: "/placeholder.svg?height=200&width=300", alt: "Integration" }}
-                    cta={{ label: "Learn More", url: "#" }}
-                  />
-                  <Card
-                    title="Powerful Analytics"
-                    description="Gain valuable insights with our comprehensive analytics tools."
-                    image={{ src: "/placeholder.svg?height=200&width=300", alt: "Analytics" }}
-                    cta={{ label: "Learn More", url: "#" }}
-                  />
-                  <Card
-                    title="Secure Platform"
-                    description="Rest easy knowing your data is protected by enterprise-grade security."
-                    image={{ src: "/placeholder.svg?height=200&width=300", alt: "Security" }}
-                    cta={{ label: "Learn More", url: "#" }}
-                  />
-                </ColumnController>
-              </section>
-
-              {/* Products Section */}
-              <section id="products-section" className="mb-32">
-                <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
-                <Carousel
-                  items={carouselItems}
-                  autoPlay={true}
-                  interval={5000}
-                  showDots={true}
-                  showArrows={true}
-                  slidesToShow={3}
-                />
-              </section>
-
-              {/* Image Text Section */}
-              <section className="mb-32">
-                <ImageText
-                  title="Designed for Performance"
-                  content="Our platform is built from the ground up with performance in mind. Experience lightning-fast load times and responsive interfaces that make your work more efficient."
-                  image={{ src: "/placeholder.svg?height=400&width=600", alt: "Performance" }}
-                  cta={{ label: "Discover More", url: "#" }}
-                  imagePosition="right"
-                />
-              </section>
-
-              {/* Tabs Section */}
-              <section className="mb-32">
-                <h2 className="text-3xl font-bold mb-8">Our Services</h2>
-                <Tabs items={tabItems} defaultActiveTab="1" />
-              </section>
-
-              {/* FAQ Section */}
-              <section id="faq-section" className="mb-32">
-                <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-                <Accordion items={accordionItems} allowMultiple={false} />
-              </section>
-
-              {/* Contact Section */}
-              <section id="contact-section" className="mb-32">
-                <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-                <ColumnController layout="50-50" gap={32}>
-                  <Card
-                    title="Contact Us"
-                    description="Have questions? Our team is here to help. Reach out to us for assistance with any aspect of our platform."
-                    cta={{ label: "Contact Support", url: "#" }}
-                    variant="minimal"
-                  />
-                  <Card
-                    title="Schedule a Demo"
-                    description="See our platform in action. Schedule a personalized demo with one of our product specialists."
-                    cta={{ label: "Book Demo", url: "#" }}
-                    variant="minimal"
-                  />
-                </ColumnController>
-              </section>
-            </div>
-
-            {/* Sidebar Column */}
-            <div>
-              <div className="sticky top-8">
-                <Anchoring title="On This Page" items={anchorItems} smooth={true} offset={100} />
-
-                <div className="mt-8">
-                  <LinkList title="Quick Links" items={linkListItems} showArrows={true} />
-                </div>
-              </div>
-            </div>
-          </ColumnController>
+          
         </div>
       </main>
 

@@ -22,17 +22,14 @@ function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: s
     private root: ReactDOM.Root | null = null;
 
     connectedCallback() {
-      // Create a mount point (div) and append it directly to the custom element
       const mountPoint = document.createElement("div");
-      this.appendChild(mountPoint); // Append to light DOM instead of shadow DOM
+      this.appendChild(mountPoint);
 
-      // Initialize React root
       this.root = ReactDOM.createRoot(mountPoint);
       this.render();
 
-      // Observe attribute changes
       const observer = new MutationObserver(() => this.render());
-      observer.observe(this, { attributes: true });
+      observer.observe(this, { attributes: true, childList: true, subtree: true });
     }
 
     render() {
@@ -40,7 +37,6 @@ function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: s
 
       let props = {};
       const aemData = this.getAttribute("aem-data");
-
       if (aemData) {
         try {
           props = JSON.parse(aemData);
@@ -51,12 +47,11 @@ function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: s
 
       this.root.render(
         <React.StrictMode>
-          <ReactComponent {...props} />
+          <ReactComponent {...props} container={this} />
         </React.StrictMode>
       );
     }
 
-    // Optional: Clean up when the element is removed
     disconnectedCallback() {
       if (this.root) {
         this.root.unmount();
@@ -66,9 +61,9 @@ function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: s
 
   customElements.define(tagName, WebComponent);
 }
-
 export function defineCustomElements() {
   try {
+    createWebComponent(ColumnController, "web-column-controller");
     createWebComponent(Navigation, "web-navigation");
     createWebComponent(Header, "web-header");
     createWebComponent(Footer, "web-footer");
@@ -81,10 +76,9 @@ export function defineCustomElements() {
     createWebComponent(ContactForm, "web-contact-form");
     createWebComponent(Accordion, "web-accordion");
     createWebComponent(Tabs, "web-tabs");
-    createWebComponent(Anchoring, "web-Anchoring");
+    createWebComponent(Anchoring, "web-anchoring");
     createWebComponent(MegaMenu, "web-mega-menu");
-    createWebComponent(ColumnController, "web-column-controller")
-    createWebComponent(LinkList, "web-link-list")
+    createWebComponent(LinkList, "web-link-list");
     console.log("All web components defined successfully");
   } catch (error) {
     console.error("Error defining web components:", error);
