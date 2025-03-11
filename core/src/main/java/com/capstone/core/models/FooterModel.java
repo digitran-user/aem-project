@@ -15,61 +15,54 @@
  */
 package com.capstone.core.models;
 
+
+
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+
+import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.capstone.core.pojo.Hours;
-import com.capstone.core.pojo.LocationWrapper;
+import com.capstone.core.pojo.FooterNav;
+import com.capstone.core.pojo.FooterWrapper;
+import com.capstone.core.pojo.IconLists;
+import com.capstone.core.pojo.Image;
+import com.capstone.core.pojo.Links;
 import com.google.gson.Gson;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import lombok.Getter;
-import lombok.Setter;
 
 
-
-@Setter
-@Getter
 @Model(adaptables = Resource.class)
-public class LocationModel {
+public class FooterModel {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-    @ValueMapValue
+    @ChildResource
     @Optional
-    private String title;
-
-    @ValueMapValue
-    @Optional
-    private String address;
-
-    @ValueMapValue
-    @Optional
-    private String phone;
-
-    @ValueMapValue
-    @Optional
-    private String email; 
-
-    @ValueMapValue
-    @Optional
-    private String mapEmbedUrl; 
-
-    @ValueMapValue
-    @Optional
-    private Boolean showMap;
+    private List<Links> links;
 
     @ChildResource
     @Optional
-    private List<Hours> businesshours;
+    private List<IconLists> iconList;
 
+    @ValueMapValue
+    @Optional
+    private String copyright; 
+
+    @ValueMapValue
+    @Optional
+    private String logoPath; 
+
+    @ValueMapValue
+    @Optional
+    private String logoAlt;
+
+   
 
     @PostConstruct
     protected void init() {
@@ -80,20 +73,17 @@ public class LocationModel {
      public String getJsonObj() {
         Gson gson = new Gson();
         try {
-
-            LocationWrapper wrapper = new LocationWrapper();
-            wrapper.setAddress(address);
-            wrapper.setEmail(email);
-            wrapper.setMapEmbed(mapEmbedUrl);
-            wrapper.setPhone(phone);
-            wrapper.setTitle(title);
-            wrapper.setShowMap(showMap);
-            wrapper.setHours(businesshours);
-           
-        
+            FooterWrapper wrapper = new FooterWrapper();
+            wrapper.setCopyright(copyright);
+            Image logo = Image.builder().alt(logoAlt).src(logoPath).build();
+            wrapper.setLogo(logo);
+            FooterNav footernav = new FooterNav();
+            footernav.setMain(links);
+            footernav.setSocial(iconList);
+            wrapper.setNavigation(footernav);
             return gson.toJson(wrapper);
         } catch (Exception e) {
-            LOG.error("Exception while rendering LocationModel component", e.getMessage());
+            LOG.error("Exception while rendering Footer component", e);
             return "{}";
         }
     }
