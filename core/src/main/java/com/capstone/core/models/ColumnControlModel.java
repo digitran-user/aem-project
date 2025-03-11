@@ -15,61 +15,33 @@
  */
 package com.capstone.core.models;
 
-import java.util.List;
 
 import javax.annotation.PostConstruct;
+import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Optional;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import com.capstone.core.pojo.Hours;
-import com.capstone.core.pojo.LocationWrapper;
+import com.capstone.core.pojo.ColumnControlWrapper;
 import com.google.gson.Gson;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import lombok.Getter;
 import lombok.Setter;
 
 
-
-@Setter
-@Getter
 @Model(adaptables = Resource.class)
-public class LocationModel {
+public class ColumnControlModel {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @ValueMapValue
     @Optional
-    private String title;
+    @Getter
+    @Setter
+    private String layout;
 
-    @ValueMapValue
-    @Optional
-    private String address;
-
-    @ValueMapValue
-    @Optional
-    private String phone;
-
-    @ValueMapValue
-    @Optional
-    private String email; 
-
-    @ValueMapValue
-    @Optional
-    private String mapEmbedUrl; 
-
-    @ValueMapValue
-    @Optional
-    private Boolean showMap;
-
-    @ChildResource
-    @Optional
-    private List<Hours> businesshours;
-
+    
 
     @PostConstruct
     protected void init() {
@@ -80,20 +52,11 @@ public class LocationModel {
      public String getJsonObj() {
         Gson gson = new Gson();
         try {
-
-            LocationWrapper wrapper = new LocationWrapper();
-            wrapper.setAddress(address);
-            wrapper.setEmail(email);
-            wrapper.setMapEmbed(mapEmbedUrl);
-            wrapper.setPhone(phone);
-            wrapper.setTitle(title);
-            wrapper.setShowMap(showMap);
-            wrapper.setHours(businesshours);
-           
-        
+            ColumnControlWrapper wrapper = new ColumnControlWrapper();
+            wrapper.setLayout(layout);
             return gson.toJson(wrapper);
         } catch (Exception e) {
-            LOG.error("Exception while rendering LocationModel component", e.getMessage());
+            LOG.error("Exception while rendering Column Control component", e);
             return "{}";
         }
     }

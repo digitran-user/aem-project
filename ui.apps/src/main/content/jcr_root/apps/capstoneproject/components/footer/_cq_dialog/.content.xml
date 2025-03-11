@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"  xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                      <logoImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        class="cq-droptarget"
+                        fieldLabel="Logo Image Path"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./logoPath"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./file"/> 
+                        <logoalt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Alt Text"
+                        name="./logoAlt"
+                        required="{Boolean}true"/>
+
+                  <copyright
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Copyright Text"
+                        name="./copyright"
+                        required="{Boolean}true"/>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Sub Footer Links List"
+                        name="./links"
+                        renderReadOnly="{Boolean}true">
+                        <field
+                            granite:class="cmp-form-options__editor-item-multifield-composite-item coral-Well"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./links">
+                            <items jcr:primaryType="nt:unstructured">
+                                <label
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Label"
+                                    name="./label"
+                                    required="{Boolean}true"/>
+                                <link
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="&#xa;URL"
+                                    name="./link"
+                                    required="{Boolean}true"/>
+                            </items>
+                        </field>
+                    </links>
+                    <iconlist
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Sub Footer Icon List"
+                        name="./iconList"
+                        renderReadOnly="{Boolean}true">
+                        <field
+                            granite:class="cmp-form-options__editor-item-multifield-composite-item coral-Well"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./iconList">
+                            <items jcr:primaryType="nt:unstructured">
+                                <label
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Icon Label"
+                                    name="./iconlabel"
+                                    required="{Boolean}true"/>
+                                <link
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Icon Redirect URL"
+                                    name="./iconlink"
+                                    required="{Boolean}true"/>
+                                  <iconType
+                            granite:class="cq-dialog-dropdown-showhide"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Icon Type"
+                            name="./iconType"
+                            required="{Boolean}true">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cq-dialog-dropdown-showhide-target=".image-video-mediatype-showhide-target"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <facebook
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Facebook"
+                                    value="facebook"/>
+                                <instagram
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Instagram"
+                                    value="instagram"/>
+                                <twitter
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Twitter"
+                                    value="twitter"/>
+
+                                <youtube
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Youtube"
+                                    value="youtube"/>            
+                                  <github
+                                    jcr:primaryType="nt:unstructured"
+                                    text="GitHub"
+                                    value="github"/>
+                                <linkedin
+                                    jcr:primaryType="nt:unstructured"
+                                    text="LinkedIn"
+                                    value="linkedIn"/>   
+                            </items>
+                    </iconType>    
+                         
+                            </items>
+                        </field>
+            </iconlist>
+             
+                       
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

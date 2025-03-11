@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Column Controller"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columnControl
+                            granite:class="cq-dialog-dropdown-showhide"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Alignment"
+                            name="./layout"
+                            required="{Boolean}true">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                cq-dialog-dropdown-showhide-target=".image-video-mediatype-showhide-target"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <align1
+                                    jcr:primaryType="nt:unstructured"
+                                    text="100"
+                                    value="100"/>
+                                     <align2
+                                    jcr:primaryType="nt:unstructured"
+                                    text="50-50"
+                                    value="50-50"/>
+                                     <align3
+                                    jcr:primaryType="nt:unstructured"
+                                    text="75-25"
+                                    value="75-25"/>
+                                     <align4
+                                    jcr:primaryType="nt:unstructured"
+                                    text="25-75"
+                                    value="25-75"/>
+                                     <align5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="33-33-33"
+                                    value="33-33-33"/>
+                                     <align6
+                                    jcr:primaryType="nt:unstructured"
+                                    text="50-25-25"
+                                    value="50-25-25"/>
+                                     <align7
+                                    jcr:primaryType="nt:unstructured"
+                                    text="25-50-25"
+                                    value="25-50-25"/>
+                                     <align8
+                                    jcr:primaryType="nt:unstructured"
+                                    text="25-25-50"
+                                    value="25-25-50"/>
+                                     <align9
+                                    jcr:primaryType="nt:unstructured"
+                                    text="25-25-25-25"
+                                    value="25-25-25-25"/>
+                                     <align10
+                                    jcr:primaryType="nt:unstructured"
+                                    text="40-20-20-20"
+                                    value="40-20-20-20"/>
+                                     <align11
+                                    jcr:primaryType="nt:unstructured"
+                                    text="20-40-20-20"
+                                    value="20-40-20-20"/>
+                                     <align12
+                                    jcr:primaryType="nt:unstructured"
+                                    text="20-20-40-20"
+                                    value="20-20-40-20"/>
+                                  <align13
+                                    jcr:primaryType="nt:unstructured"
+                                    text="20-20-20-40"
+                                    value="20-20-20-40"/>
+                              
+                            </items>
+                        </columnControl>  
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
