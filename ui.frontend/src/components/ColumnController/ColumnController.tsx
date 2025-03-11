@@ -30,10 +30,8 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
   className = "",
   columnClassName = "",
 }) => {
-  // Convert children to array to handle them individually
   const childrenArray = React.Children.toArray(children)
 
-  // Get grid template columns based on layout
   const getGridTemplateColumns = (): string => {
     switch (layout) {
       case "100":
@@ -67,12 +65,10 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
     }
   }
 
-  // Get the number of columns based on the layout
   const getColumnCount = (): number => {
     return layout.split("-").length
   }
 
-  // Render only the number of columns specified by the layout
   const renderColumns = () => {
     const columnCount = getColumnCount()
     return childrenArray.slice(0, columnCount).map((child, index) => (
@@ -84,13 +80,24 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
 
   return (
     <div
-      className={`grid ${className}`}
-      style={{
-        gridTemplateColumns: getGridTemplateColumns(),
-        gap: `${gap}px`,
-      }}
+      className={`column-controller ${className}`}
+      style={
+        {
+          display: "grid",
+          gap: `${gap}px`,
+          gridTemplateColumns: "1fr",
+          "--desktop-grid": getGridTemplateColumns(),
+        } as React.CSSProperties
+      }
     >
       {renderColumns()}
+      <style jsx>{`
+        @media (min-width: 768px) {
+          .column-controller {
+            grid-template-columns: var(--desktop-grid);
+          }
+        }
+      `}</style>
     </div>
   )
 }
