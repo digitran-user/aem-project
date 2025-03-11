@@ -32,36 +32,36 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
 }) => {
   const childrenArray = React.Children.toArray(children)
 
-  const getGridTemplateColumns = (): string => {
+  const getGridClass = (): string => {
     switch (layout) {
       case "100":
-        return "1fr"
+        return "grid-cols-1"
       case "50-50":
-        return "1fr 1fr"
+        return "grid-cols-1 md:grid-cols-2"
       case "75-25":
-        return "3fr 1fr"
+        return "grid-cols-1 md:grid-cols-[3fr_1fr]"
       case "25-75":
-        return "1fr 3fr"
+        return "grid-cols-1 md:grid-cols-[1fr_3fr]"
       case "33-33-33":
-        return "1fr 1fr 1fr"
+        return "grid-cols-1 md:grid-cols-3"
       case "50-25-25":
-        return "2fr 1fr 1fr"
+        return "grid-cols-1 md:grid-cols-[2fr_1fr_1fr]"
       case "25-50-25":
-        return "1fr 2fr 1fr"
+        return "grid-cols-1 md:grid-cols-[1fr_2fr_1fr]"
       case "25-25-50":
-        return "1fr 1fr 2fr"
+        return "grid-cols-1 md:grid-cols-[1fr_1fr_2fr]"
       case "25-25-25-25":
-        return "1fr 1fr 1fr 1fr"
+        return "grid-cols-1 md:grid-cols-4"
       case "40-20-20-20":
-        return "2fr 1fr 1fr 1fr"
+        return "grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr]"
       case "20-40-20-20":
-        return "1fr 2fr 1fr 1fr"
+        return "grid-cols-1 md:grid-cols-[1fr_2fr_1fr_1fr]"
       case "20-20-40-20":
-        return "1fr 1fr 2fr 1fr"
+        return "grid-cols-1 md:grid-cols-[1fr_1fr_2fr_1fr]"
       case "20-20-20-40":
-        return "1fr 1fr 1fr 2fr"
+        return "grid-cols-1 md:grid-cols-[1fr_1fr_1fr_2fr]"
       default:
-        return "1fr"
+        return "grid-cols-1"
     }
   }
 
@@ -79,25 +79,8 @@ export const ColumnController: React.FC<ColumnControllerProps> = ({
   }
 
   return (
-    <div
-      className={`column-controller ${className}`}
-      style={
-        {
-          display: "grid",
-          gap: `${gap}px`,
-          gridTemplateColumns: "1fr",
-          "--desktop-grid": getGridTemplateColumns(),
-        } as React.CSSProperties
-      }
-    >
+    <div className={`grid ${getGridClass()} ${className}`} style={{ gap: `${gap}px` }}>
       {renderColumns()}
-      <style jsx>{`
-        @media (min-width: 768px) {
-          .column-controller {
-            grid-template-columns: var(--desktop-grid);
-          }
-        }
-      `}</style>
     </div>
   )
 }
