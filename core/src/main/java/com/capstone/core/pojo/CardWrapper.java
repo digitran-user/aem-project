@@ -13,7 +13,7 @@ public class CardWrapper {
 
     private String description;
 
-   private Cta cta;
+    private Cta cta;
 
     private String tags;
 
