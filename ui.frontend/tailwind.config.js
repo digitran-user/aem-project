@@ -8,6 +8,9 @@ module.exports = {
     "app/**/*.{ts,tsx}",
     "components/**/*.{ts,tsx}",
   ],
+  corePlugins: {
+    container: false, // Disable the container utility entirely
+  },
   theme: {
     extend: {
       colors: {
@@ -62,6 +65,7 @@ module.exports = {
         "[1fr_1fr_1fr_2fr]": "1fr 1fr 1fr 2fr",
       },
     },
+    container: false,
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio"), require("tailwindcss-animate")],
 }
