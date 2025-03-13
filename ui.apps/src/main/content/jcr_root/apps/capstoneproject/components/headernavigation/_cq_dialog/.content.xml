@@ -31,7 +31,9 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 fieldLabel="Show Search"
                                                 name="./showSearch"
-                                                text="Show Search"/>
+                                                text="Show Search"
+                                                uncheckedValue="false"
+                                                value="true"/>
                                             <file
                                                 granite:class="cmp-image__editor-file-upload"
                                                 jcr:primaryType="nt:unstructured"
