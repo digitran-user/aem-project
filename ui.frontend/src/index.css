@@ -1,7 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root{/*declare global variables here*/
+  --item-color: rgb(196, 196, 21);
+  --primary-color: rgb(23, 184, 166);
+  --primary-dark-color: rgb(18, 162, 145);
+  --secondary-color: rgb(240, 33, 26);
+  --max-w: 700px;
+  --gray-color: rgb(68, 71, 91);
+  --yellow-color: rgb(254, 188, 33);
+  --dark-yellow-color: rgb(241, 173, 15);
+}
+
+body{
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+}
+.dgt-rounded-button{
+  border-radius: 22px;
+}
+.container-5 {
+  padding: 5px;
+}
+.container-10 {
+  padding: 10px;
+}
+.container-20 {
+  padding: 20px;
+}
 .rte-content h1 {
   @apply text-4xl font-bold mb-4;
 }

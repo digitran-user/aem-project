@@ -15,7 +15,9 @@ import { Tabs } from "./components/Tabs/Tabs"
 import { Anchoring } from "./components/Anchoring/Anchoring"
 import { MegaMenu } from "./components/MegaMenu/MegaMenu"
 import { ColumnController } from "./components/ColumnController/ColumnController"
+import { TitleSubtitle } from "./components/TitleSubtitle/TitleSubtitle"
 import { LinkList } from "./components/LinkList/LinkList"
+import { Spacer } from "./components/Spacer/Spacer"
 // Helper function to create web components from React components
 function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: string) {
   class WebComponent extends HTMLElement {
@@ -79,6 +81,8 @@ export function defineCustomElements() {
     createWebComponent(Anchoring, "web-anchoring");
     createWebComponent(MegaMenu, "web-mega-menu");
     createWebComponent(LinkList, "web-link-list");
+    createWebComponent(TitleSubtitle, "web-title-subtitle");
+    createWebComponent(Spacer, "web-spacer");
     console.log("All web components defined successfully");
   } catch (error) {
     console.error("Error defining web components:", error);
