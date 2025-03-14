@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{/*declare global variables here*/
+  --item-color: rgb(196, 196, 21);
+  --primary-color: rgb(23, 184, 166);
+  --primary-dark-color: rgb(18, 162, 145);
+  --secondary-color: rgb(240, 33, 26);
+  --max-w: 700px;
+  --gray-color: rgb(68, 71, 91);
+  --yellow-color: rgb(254, 188, 33);
+  --dark-yellow-color: rgb(241, 173, 15);
+}
+
 body{
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
