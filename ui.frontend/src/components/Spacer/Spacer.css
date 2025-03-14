@@ -1,5 +1,5 @@
 .spacer-border{
-    height: 200px;
-    width: 200px;
-    border: 1px solid red;
+    height: 1px;
+    width: 1px;
+    border: 1px solid transparent;
 }
