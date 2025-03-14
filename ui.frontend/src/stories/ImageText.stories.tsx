@@ -28,7 +28,7 @@ export const Default: Story = {
     },
     contentPosition: 'center',
     imagePosition: "left",
-    backgroundColor: "white",
+    backgroundColor: "#ce2345",
   },
 }
 

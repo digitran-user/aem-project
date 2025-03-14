@@ -40,7 +40,7 @@ export const Banner: React.FC<BannerProps> = ({
       >
         <h1 className={`animate-pulse animate-infinite text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-${textColor}`}>{title}</h1>
         <p className={`mt-6 text-xl max-w-2xl text-${textColor}`} dangerouslySetInnerHTML={{__html: description}} />
-        {cta.label != "" && (
+        {cta && cta.hasOwnProperty("label") && (
           <div className="mt-10">
             <a
               href={cta.url}

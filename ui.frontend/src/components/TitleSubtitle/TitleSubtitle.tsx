@@ -7,6 +7,7 @@ export interface TitleSubtitleProps {
     style?:{
         titleFont?: string
         subtitleFont?: string
+        yspacing?: string
     }
   }
 
@@ -16,7 +17,8 @@ export const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
     alignment = "",
     style = {
         titleFont: "",
-        subtitleFont: ""
+        subtitleFont: "",
+        yspacing: ""
     }
 }) => {
     const alignmentClasses: any = {
@@ -25,7 +27,8 @@ export const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
         right: "text-right items-end",
       }    
     return (
-        <div className={`mx-2 my-1 ${alignmentClasses[alignment]}`}>
+        <div style={{marginTop: style.yspacing, marginBottom: style.yspacing}} 
+        className={`mx-2 ${alignmentClasses[alignment]}`}>
           { title != "" && <h1 className="font-bold" style={{fontSize: style.titleFont}}>{title}</h1> }
           { subtitle != "" && <p className="text-wrap my-1" style={{fontSize: style.subtitleFont}} dangerouslySetInnerHTML={{__html: subtitle}} /> }
         </div>

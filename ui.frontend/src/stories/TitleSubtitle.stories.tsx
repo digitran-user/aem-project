@@ -20,7 +20,8 @@ export const Default: Story = {
     alignment: "left",
     style: {
         titleFont: "20px",
-        subtitleFont: "14px"
+        subtitleFont: "14px",
+        yspacing: "30px"
     }
   }
 }
