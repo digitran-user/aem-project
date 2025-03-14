@@ -37,7 +37,7 @@ export const LinkList: React.FC<LinkListProps> = ({
               <div>
                 <span className="font-medium">{item.label}</span>
                 {item.description && (
-                  <p className="text-sm text-gray-500 group-hover:text-blue-500 mt-1">{item.description}</p>
+                  <p className="text-sm text-gray-500 group-hover:text-blue-500 mt-1" dangerouslySetInnerHTML={{__html: item.description}} />
                 )}
               </div>
               {showArrows && (

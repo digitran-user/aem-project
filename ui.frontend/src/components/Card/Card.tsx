@@ -50,7 +50,7 @@ export const Card: React.FC<CardProps> = ({
           </div>
         )}
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-gray-600 mb-4" dangerouslySetInnerHTML={{__html: description}} />
         {cta && (
           <a
             href={cta.url}

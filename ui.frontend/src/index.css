@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.container-5 {
+  padding: 5px;
+}
+.container-10 {
+  padding: 10px;
+}
+.container-20 {
+  padding: 20px;
+}
 .rte-content h1 {
   @apply text-4xl font-bold mb-4;
 }
