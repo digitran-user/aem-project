@@ -2,14 +2,15 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        pageTitle="Capstone Project"
-        jcr:primaryType="cq:PageContent"
-        jcr:title="en"
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2025-03-14T09:46:58.896+05:30"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/capstoneproject/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="en"
         sling:resourceType="capstoneproject/components/page"
-    >
+        pageTitle="Capstone Project">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="capstoneproject/components/container"
@@ -24,60 +25,349 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="capstoneproject/components/container"
                     layout="responsiveGrid">
-                    <teaser
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                    <banner
+                        jcr:created="{Date}2025-03-04T07:52:50.477+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T08:40:29.956+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="capstoneproject/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
+                        sling:resourceType="capstoneproject/components/banner"
+                        alignment="left"
+                        altText="eicherBanner"
+                        backgroundImage="/content/dam/capstoneproject/bannerEicher1.png"
+                        bannerCtaLabel="See How"
+                        bannerCtaLink="https://www.eicher.in/media/video-gallery"
+                        description="&lt;p>The Future of Indian Trucking&lt;/p>&#xd;&#xa;"
                         textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser>
-                    <teaser_copy
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                        title="Go Pro"/>
+                    <text
+                        jcr:created="{Date}2025-03-14T08:45:42.023+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T08:46:18.413+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="capstoneproject/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
+                        sling:resourceType="foundation/components/text"
+                        text="&lt;h1 style=&quot;text-align: center;&quot;>OUR VEHICLE RANGE&lt;/h1>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Discover a range of vehicles crafted for excellence, offering solutions&lt;br>&#xd;&#xa;for every journey and challenge.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                    <columncontroller
+                        jcr:created="{Date}2025-03-14T08:49:51.161+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T08:50:35.057+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="capstoneproject/components/columncontroller"
+                        layout="25-25-25-25">
+                        <par1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <card
+                                jcr:created="{Date}2025-03-14T08:50:54.241+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="&lt;p>The new range of BS VI Eicher Pro Heavy Duty haulage trucks and tractors, available from 18.5-55 tonne GVW, is dsigned and developed to provide unparalleled business advantage &lt;/p>&#xd;&#xa;"
+                                jcr:lastModified="{Date}2025-03-14T09:29:44.345+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Heavy Duty"
+                                sling:resourceType="capstoneproject/components/card"
+                                alt="trucks"
+                                altValueFromDAM="false"
+                                descriptionFromPage="false"
+                                disableLazyLoading="false"
+                                fileReference="/content/dam/capstoneproject/heavyTruck.png"
+                                imageFromPageImage="false"
+                                isDecorative="false"
+                                linkTarget="_self"
+                                textIsRich="true"
+                                titleFromPage="false"
+                                variant="default">
+                                <actions jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        link="https://www.eichertrucksandbuses.com/heavy-duty-trucks"
+                                        linkTarget="_blank"
+                                        text="Explore"/>
+                                </actions>
+                            </card>
+                        </par1>
+                        <par2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <card_copy
+                                jcr:created="{Date}2025-03-14T08:50:54.241+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="&lt;p>Eicher's Medium Duty trucks include 6 wheel, 8 ton, 12 ton, and 16 ton models. They also come in many variations such as 6 wheeler tippers, 10 feet trucks, and 12 tyre trucks.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                jcr:lastModified="{Date}2025-03-14T09:26:45.345+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Medium Duty"
+                                sling:resourceType="capstoneproject/components/card"
+                                alt="medTruck"
+                                altValueFromDAM="false"
+                                descriptionFromPage="false"
+                                disableLazyLoading="false"
+                                fileReference="/content/dam/capstoneproject/medium.png"
+                                imageFromPageImage="false"
+                                isDecorative="false"
+                                linkTarget="_self"
+                                textIsRich="true"
+                                titleFromPage="false"
+                                variant="default">
+                                <actions jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        link="https://www.eichertrucksandbuses.com/light-medium-duty-trucks"
+                                        linkTarget="_self"
+                                        text="Explore"/>
+                                </actions>
+                            </card_copy>
+                        </par2>
+                        <par3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <card_copy
+                                jcr:created="{Date}2025-03-14T08:50:54.241+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="&lt;p>he new Eicher Pro 2055 EV is an efficient and smart innovation that plans to transform the face of logistics. It has been designed to perform in the e-commerce, FMCG&amp;nbsp; business.&lt;/p>&#xd;&#xa;"
+                                jcr:lastModified="{Date}2025-03-14T09:29:19.945+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Light Duty"
+                                sling:resourceType="capstoneproject/components/card"
+                                alt="light"
+                                altValueFromDAM="false"
+                                descriptionFromPage="false"
+                                disableLazyLoading="false"
+                                fileReference="/content/dam/capstoneproject/lighttrucks.png"
+                                imageFromPageImage="false"
+                                isDecorative="false"
+                                linkTarget="_self"
+                                textIsRich="true"
+                                titleFromPage="false"
+                                variant="default">
+                                <actions jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        link="https://www.eichertrucksandbuses.com/light-medium-duty-trucks/electric-truck"
+                                        linkTarget="_self"
+                                        text="Explore"/>
+                                </actions>
+                            </card_copy>
+                        </par3>
+                        <par4
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <card_copy
+                                jcr:created="{Date}2025-03-14T08:50:54.241+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="&lt;p>Eicher presents the all new Eicher BSVI Bus Range, the smart, comfortable, advanced and efficient range of next gen buses designed to deliver maximum Fuel Efficiency and Profitability.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                jcr:lastModified="{Date}2025-03-14T09:29:30.550+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="School Buses "
+                                sling:resourceType="capstoneproject/components/card"
+                                alt="buses"
+                                altValueFromDAM="false"
+                                descriptionFromPage="false"
+                                disableLazyLoading="false"
+                                fileReference="/content/dam/capstoneproject/schoolbuses.png"
+                                imageFromPageImage="false"
+                                isDecorative="false"
+                                linkTarget="_self"
+                                textIsRich="true"
+                                titleFromPage="false"
+                                variant="default">
+                                <actions jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        link="https://www.eichertrucksandbuses.com/buses"
+                                        linkTarget="_blank"
+                                        text="Explore"/>
+                                </actions>
+                            </card_copy>
+                        </par4>
+                    </columncontroller>
+                    <imagetext_copy
+                        jcr:created="{Date}2025-03-14T07:20:57.537+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T07:25:58.860+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Royal Enfield"
+                        sling:resourceType="capstoneproject/components/imagetext"
+                        alt="royal enfield"
+                        altValueFromDAM="false"
+                        backGroundColor="#001F3F"
+                        content="&lt;p>The oldest motorcycle brand in continuous production, Royal Enfield made its first motorcycle in 1901. A division of Eicher Motors Limited, Royal Enfield has created the mid-size motorcycle segment in India with its unique and distinctive modern classic motorcycles.&lt;/p>&#xd;&#xa;"
+                        contentPosition="top"
+                        disableLazyLoading="false"
+                        displayPopupTitle="false"
+                        fileReference="/content/dam/capstoneproject/royal enfield.jpg"
+                        imageCtaLabel="Royal Enfield Home"
+                        imageCtaLink="https://www.royalenfield.com/in/en/home/"
+                        imageFromPageImage="false"
+                        imagePosition="left"
+                        isDecorative="false"
+                        linkTarget="_self"
                         textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser_copy>
-                    <teaser_copy_1579324932
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                        titleValueFromDAM="false"/>
+                    <imagetext
+                        jcr:created="{Date}2025-03-14T07:20:57.537+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T07:35:43.028+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="capstoneproject/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
+                        jcr:title="VE COMMERCIAL VEHICLES"
+                        sling:resourceType="capstoneproject/components/imagetext"
+                        alt="ve"
+                        altValueFromDAM="false"
+                        backGroundColor="#001F3F"
+                        content="&lt;p>VE Commercial Vehicles Limited (VECV) is a joint venture between the Volvo Group and Eicher Motors Limited. In operation since July 2008, the company includes the complete range of Eicher branded trucks and buses, VE Powertrain, Eicher’s components and engineering design services businesses, the sales and distribution business of Volvo Trucks as well as aftermarket support to Volvo Buses in India.&lt;/p>&#xd;&#xa;"
+                        contentPosition="top"
+                        disableLazyLoading="false"
+                        displayPopupTitle="false"
+                        fileReference="/content/dam/capstoneproject/veBuses.png"
+                        imageCtaLabel="Explore Products"
+                        imageCtaLink="https://www.eichertrucksandbuses.com/"
+                        imageFromPageImage="false"
+                        imagePosition="right"
+                        isDecorative="false"
+                        linkTarget="_blank"
+                        linkURL="https://www.vecv.in/"
                         textIsRich="true"
-                        titleFromPage="false">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                    </teaser_copy_1579324932>
-                    <helloworld
+                        titleValueFromDAM="false"/>
+                    <new_card
+                        jcr:created="{Date}2025-03-08T06:34:16.243+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="&lt;p>This is a description of the component&lt;/p>&#xd;&#xa;"
+                        jcr:lastModified="{Date}2025-03-08T06:37:55.749+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="capstoneproject/components/helloworld"
-                        text="lalala :)"/>
+                        jcr:title="en"
+                        sling:resourceType="capstoneproject/components/new-card"
+                        alt="alt"
+                        altValueFromDAM="false"
+                        descriptionFromPage="false"
+                        disableLazyLoading="false"
+                        fileReference="/content/dam/wknd-events/wknd-events.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="false"
+                        linkTarget="_self"
+                        linkURL="https://www.google.com"
+                        pretitle="This is a card component"
+                        textIsRich="true"
+                        titleFromPage="false"
+                        variant="default">
+                        <actions jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                link="https://www.google.com"
+                                linkTarget="_blank"
+                                text="Go DigiTran"/>
+                        </actions>
+                    </new_card>
+                    <image
+                        jcr:created="{Date}2025-03-14T08:16:15.258+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T09:46:58.896+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="capstoneproject/components/image"
+                        alt="trucks"
+                        altValueFromDAM="false"
+                        disableLazyLoading="false"
+                        displayPopupTitle="true"
+                        fileReference="/content/dam/capstoneproject/trucks-img (2).png"
+                        imageFromPageImage="false"
+                        isDecorative="false"
+                        linkTarget="_self"
+                        titleValueFromDAM="true"/>
+                    <columncontroller_1742548482
+                        jcr:created="{Date}2025-03-14T08:01:25.758+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-14T08:01:36.373+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="capstoneproject/components/columncontroller"
+                        layout="50-50">
+                        <par2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <text
+                                jcr:created="{Date}2025-03-14T08:53:03.598+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2025-03-14T08:53:31.508+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="capstoneproject/components/text"
+                                textIsRich="true"/>
+                            <linklist
+                                jcr:created="{Date}2025-03-14T08:01:42.570+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2025-03-14T08:20:58.644+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="capstoneproject/components/linkList"
+                                textIsRich="[true,true,true,true]"
+                                title="Coverage">
+                                <linkItems jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        description="&lt;p>VE Commercial vehicles sells 8094 units in February..&lt;/p>&#xd;&#xa;"
+                                        label="25-03-03"
+                                        linkId="1"
+                                        linkUrl="https://www.vecv.in/press-releases/ve-commercial-vehicles-sells-8092-units-in-february-2025"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="&lt;p>VECV inagurates manufacturing facility and start delivery of Eicher vehicles...&lt;/p>&#xd;&#xa;"
+                                        label="2025-03-02"
+                                        linkId="2"
+                                        linkUrl="https://www.vecv.in/press-releases/ve-commercial-vehicles-sells-8092-units-in-february-2025"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="&lt;p>Eicher marks landmark order of 1612 buses and 42 trucks from UPSRTC&lt;/p>&#xd;&#xa;"
+                                        label="2025-03-02"
+                                        linkId="3"
+                                        linkUrl="https://www.vecv.in/press-releases/eicher-bags-landmark-order-of-1621-buses-and-42-hd-trucks-from-upsrtc"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="&lt;p>VE commerical vehicles sells 8489 units in Junary 2025&lt;/p>&#xd;&#xa;"
+                                        label="2025-01-09"
+                                        linkId="4"
+                                        linkUrl="https://www.vecv.in/press-releases/ve-commercial-vehicles-sells-8489-units-in-january-2025"/>
+                                </linkItems>
+                            </linklist>
+                        </par2>
+                        <par1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <image
+                                jcr:created="{Date}2025-03-14T08:01:48.324+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2025-03-14T08:14:02.378+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="capstoneproject/components/image"
+                                alt="coverage"
+                                altValueFromDAM="false"
+                                disableLazyLoading="false"
+                                displayPopupTitle="true"
+                                fileReference="/content/dam/capstoneproject/coverage.png"
+                                imageFromPageImage="false"
+                                isDecorative="false"
+                                linkTarget="_self"
+                                titleValueFromDAM="true"/>
+                        </par1>
+                    </columncontroller_1742548482>
+               
                 </container>
             </container>
         </root>
     </jcr:content>
+    <about/>
+    <our-business/>
+    <investor/>
+    <media/>
+    <initiative/>
+    <career/>
+    <contact-us/>
 </jcr:root>

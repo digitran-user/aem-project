@@ -13,22 +13,14 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="capstoneproject/components/container"
             layout="simple">
-            <navigation
+         <!--  <navigation
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="capstoneproject/components/navigation"
                 collectAllPages="false"
                 navigationRoot="/content/capstoneproject/us/en"
                 skipNavigationRoot="false"
-                structureDepth="1"/>
-            <languagenavigation
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="capstoneproject/components/languagenavigation"
-                navigationRoot="/content/capstoneproject/us"
-                structureDepth="2"/>
-            <search
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="capstoneproject/components/search"
-                searchRoot="/content/capstoneproject/us"/>
+                structureDepth="1"/>--> 
+           
         </root>
     </jcr:content>
 </jcr:root>
