@@ -46,7 +46,7 @@ export const ImageText: React.FC<ImageTextProps> = ({
             <img
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
-              className="rounded-lg shadow-xl w-full h-auto object-cover"
+              className="transition-transform duration-300 hover:scale-110 rounded-lg shadow-xl w-full h-auto object-cover"
             />
           </div>
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:pr-8 lg:pl-8">
@@ -56,7 +56,7 @@ export const ImageText: React.FC<ImageTextProps> = ({
               <div className="mt-8">
                 <a
                   href={cta.url}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="dgt-rounded-button inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   {cta.label}
                 </a>

@@ -19,8 +19,8 @@ export interface CardProps {
 
 export const Card: React.FC<CardProps> = ({
   image = {
-    src: "/placeholder.svg?height=300&width=400",
-    alt: "Card image",
+    src: "",
+    alt: "",
   },
   title = "Card Title",
   description = "This is a description for the card component.",
@@ -34,8 +34,8 @@ export const Card: React.FC<CardProps> = ({
   className = "",
 }) => {
   const renderDefault = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
-      <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-48 object-cover" />
+    <div className={`hover:animate-rotate-y bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
+     {image && image.hasOwnProperty("src") && <img src={image.src} alt={image.alt} className="w-full h-48 object-cover" /> }
       <div className="p-6">
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
@@ -64,9 +64,9 @@ export const Card: React.FC<CardProps> = ({
   )
 
   const renderHorizontal = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
+    <div className={`hover:animate-rotate-y bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
       <div className="sm:w-1/3">
-        <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-48 sm:h-full object-cover" />
+      {image && image.hasOwnProperty("src") && <img src={image.src} alt={image.alt} className="w-full h-48 sm:h-full object-cover" /> }
       </div>
       <div className="p-6 sm:w-2/3">
         {tags.length > 0 && (
@@ -99,7 +99,7 @@ export const Card: React.FC<CardProps> = ({
     <div className={`bg-white rounded-lg overflow-hidden ${className}`}>
       <div className="p-6">
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-gray-600 mb-4" dangerouslySetInnerHTML={{__html: description}} />
         {cta && (
           <a href={cta.url} className="text-indigo-600 hover:text-indigo-500 font-medium">
             {cta.label} →

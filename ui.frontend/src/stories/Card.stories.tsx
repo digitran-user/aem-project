@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Card>
 export const Default: Story = {
   args: {
     image: {
-      src: "/placeholder.svg?height=300&width=400",
+      src: "",
       alt: "Card image",
     },
     title: "Card Title",

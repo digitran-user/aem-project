@@ -67,6 +67,6 @@ module.exports = {
     },
     container: false,
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio"), require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animated'), require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio"), require("tailwindcss-animate")],
 }
 
