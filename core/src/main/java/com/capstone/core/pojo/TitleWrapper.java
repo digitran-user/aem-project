@@ -14,5 +14,7 @@ public class TitleWrapper {
 
     private String alignment;
 
+    private Style style;
+
 
 }
