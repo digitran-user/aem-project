@@ -65,37 +65,39 @@ export const AnimatedBanner: React.FC<AnimatedBannerProps> = ({ itemList = [] })
     }, [active]);
 
     return (
-        <section className="carousel" ref={carouselRef}>
-            <div className="list">
-                {itemList.map((item, index) => (
-                    <div className="item" key={index}>
-                        <figure>
-                            <img src={item.backgroundImage} alt={item.title} />
-                        </figure>
-                        <div className="content">
-                            {/* <p className="category">{item.category}</p> */}
-                          {item.title && <h2>{item.title}</h2>}
-                          {item.description && <p className="description">{item.description}</p> }
+        <div className="animated-banner">
+            <section className="carousel" ref={carouselRef}>
+                <div className="list">
+                    {itemList.map((item, index) => (
+                        <div className="item" key={index}>
+                            <figure>
+                                <img src={item.backgroundImage} alt={item.title} />
+                            </figure>
+                            <div className="content">
+                                {/* <p className="category">{item.category}</p> */}
+                                {item.title && <h2>{item.title}</h2>}
+                                {item.description && <p className="description">{item.description}</p>}
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-            <div className="arrows">
-                <button ref={prevBtnRef} id="prev">
-                    <i className="fa-solid fa-chevron-left" />
-                </button>
-                <button ref={nextBtnRef} id="next">
-                    <i className="fa-solid fa-chevron-right" />
-                </button>
-            </div>
-            <div className="indicators" ref={indicatorRef}>
-                {/* <div className="number">02</div> */}
-                <ul>
-                    {itemList.map((_, index) => (
-                        <li key={index} className={index === active ? "active" : ""} />
                     ))}
-                </ul>
-            </div>
-        </section>
+                </div>
+                <div className="arrows">
+                    <button ref={prevBtnRef} id="prev">
+                        <i className="fa-solid fa-chevron-left" />
+                    </button>
+                    <button ref={nextBtnRef} id="next">
+                        <i className="fa-solid fa-chevron-right" />
+                    </button>
+                </div>
+                <div className="indicators" ref={indicatorRef}>
+                    {/* <div className="number">02</div> */}
+                    <ul>
+                        {itemList.map((_, index) => (
+                            <li key={index} className={index === active ? "active" : ""} />
+                        ))}
+                    </ul>
+                </div>
+            </section>
+        </div>
     );
 };
