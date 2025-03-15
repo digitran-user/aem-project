@@ -6,14 +6,12 @@ export interface VideoModalProps {
     isOpen?: any
     onClose?: any
     videoUrl?: string
-    videoChannel?: string
 }
 
 export const VideoModal: React.FC<VideoModalProps> = ({
     isOpen,
     onClose,
-    videoUrl,
-    videoChannel
+    videoUrl
 }) => {
     if (!isOpen) return null;
     return (

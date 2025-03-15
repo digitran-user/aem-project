@@ -6,14 +6,12 @@ export interface VideoProps {
     videoUrl?: string
     thumbnailUrl?: string
     videoTitle?: string
-    videoChannel?: string
 }
 
 export const Video: React.FC<VideoProps> = ({
     videoUrl = "",
     thumbnailUrl = "",
-    videoTitle = "",
-    videoChannel = ""
+    videoTitle = ""
 }) => {
     const [isModalOpen, setModalOpen] = useState(false);
     return (
@@ -32,7 +30,7 @@ export const Video: React.FC<VideoProps> = ({
             </div>
             <div className="h-screen flex items-center
                         justify-center">
-                <VideoModal videoUrl={videoUrl} videoChannel={videoChannel} isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+                <VideoModal videoUrl={videoUrl} isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
             </div>
         </div>
     )
