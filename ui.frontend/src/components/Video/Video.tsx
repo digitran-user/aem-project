@@ -24,9 +24,9 @@ export const Video: React.FC<VideoProps> = ({
                         className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
                     />
                 </a>
-                <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+               {videoTitle && <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
                     <strong className="font-medium">{videoTitle}</strong>
-                </div>
+                </div> }
             </div>
             <div className="h-screen flex items-center
                         justify-center">
