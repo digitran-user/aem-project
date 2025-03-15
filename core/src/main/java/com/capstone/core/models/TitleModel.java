@@ -12,6 +12,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.capstone.core.pojo.Style;
 import com.capstone.core.pojo.TitleWrapper;
 import com.google.gson.Gson;
 
@@ -59,6 +60,11 @@ public class TitleModel {
             wrapper.setTitle(title);
             wrapper.setAlignment(alignment);
             wrapper.setSubtitle(description);
+
+            Style style = new Style();
+            style.setSubtitleFont(subtitleFont+"px");
+            style.setTitleFont(titleFont+"px");
+            style.setYspacing(yspacing+"px");
             return gson.toJson(wrapper);
         } catch (Exception e) {
             LOG.error("Exception while rendering Title component", e);
