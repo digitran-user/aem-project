@@ -60,7 +60,6 @@
                     transform: translateY(-50%);
                     & img{
                         width: 100%;
-                        transform: rotate(-30deg);
                     }
                     &::before{
                         content: '';
@@ -228,7 +227,7 @@
 }
 
 /* animation */
-body{
+.animated-banner{
     .carousel{
         --calculation: 1; /* 1 or -1 */
         & .list{
@@ -277,10 +276,10 @@ body{
     }
 }
 @media screen and (max-width: 1023px) and (min-width: 768px){
-    :root{
+    .animated-banner{
         --w-column: 100px;
     }
-    body{
+    .animated-banner{
         & .carousel{
             height: 60vh;
             & .list{
@@ -296,10 +295,13 @@ body{
     }
 }
 @media screen and (max-width: 767px){
-    :root{
+    .description{
+        display: none;
+    }
+    .animated-banner{
         --w-column: 50px;
     }
-    body{
+    .animated-banner{
         & .carousel{
             height: 100vh;
             & .list{
@@ -308,18 +310,19 @@ body{
                         justify-content: end;
                         padding-bottom: 100px;
                         & h2{
-                            font-size: 5em;
+                            font-size: 2em;
                         }
                     }
                     & figure{
                         width: 110%;
                         transform: translateY(0);
-                        top: 200px;
+                        top: 100px;
                         left: -30px;
                     }
                 }
             }
             & .indicators{
+                top: 80%;
                 & .number{
                     font-size: 10em;
                     transform: translateX(50px);
