@@ -65,7 +65,7 @@ export const Card: React.FC<CardProps> = ({
 
   const renderHorizontal = () => (
     <div className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
-      <div className="hover:animate-rotate-y sm:w-1/3">
+      <div className="sm:w-1/3">
       {image && image.hasOwnProperty("src") && <img src={image.src} alt={image.alt} className="w-full h-48 sm:h-full object-cover" /> }
       </div>
       <div className="p-6 sm:w-2/3">

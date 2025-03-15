@@ -51,7 +51,7 @@ export const Accordion: React.FC<AccordionProps> = ({ items, allowMultiple = fal
           </button>
           {openItems.includes(item.id) && (
             <div className="px-4 py-2">
-              <p>{item.content}</p>
+              <p dangerouslySetInnerHTML={{__html: item.content}}></p>
             </div>
           )}
         </div>
