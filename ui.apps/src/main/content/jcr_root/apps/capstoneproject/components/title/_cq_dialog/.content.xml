@@ -45,6 +45,23 @@
                                     value="center"/>
                              </items>
                         </alignment>  
+                          <titleFont
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Title Font"
+                                name="./titleFont"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"/>
+
+                         <subtitleFont
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Sub Title Font"
+                                name="./subtitleFont"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"/>
+
+                         <yspacing
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Y Spacing"
+                                name="./yspacing"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"/>
 
                 </items>
             </column>
