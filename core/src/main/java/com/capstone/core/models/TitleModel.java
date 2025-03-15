@@ -65,6 +65,7 @@ public class TitleModel {
             style.setSubtitleFont(subtitleFont+"px");
             style.setTitleFont(titleFont+"px");
             style.setYspacing(yspacing+"px");
+            wrapper.setStyle(style);
             return gson.toJson(wrapper);
         } catch (Exception e) {
             LOG.error("Exception while rendering Title component", e);
