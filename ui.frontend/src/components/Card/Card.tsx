@@ -34,7 +34,7 @@ export const Card: React.FC<CardProps> = ({
   className = "",
 }) => {
   const renderDefault = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
+    <div className={`mx-1 my-1 bg-white rounded-lg shadow-md overflow-hidden ${className}`}>
      {image && image.hasOwnProperty("src") && <img src={image.src} alt={image.alt} className="hover:animate-rotate-y w-full h-48 object-cover" /> }
       <div className="p-6">
         {tags.length > 0 && (
@@ -66,7 +66,7 @@ export const Card: React.FC<CardProps> = ({
   )
 
   const renderHorizontal = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
+    <div className={`mx-1 my-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row ${className} ${alignment === 'right' ? 'sm:flex-row-reverse' : ''}`}>
       <div className="sm:w-1/3">
       {image && image.hasOwnProperty("src") && <img src={image.src} alt={image.alt} className="w-full h-48 sm:h-full object-cover" /> }
       </div>
