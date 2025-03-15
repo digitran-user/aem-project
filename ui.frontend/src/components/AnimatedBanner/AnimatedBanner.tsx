@@ -43,7 +43,7 @@ export const AnimatedBanner: React.FC<AnimatedBannerProps> = ({ itemList = [] })
             clearInterval(autoPlay);
             autoPlay = setInterval(() => {
                 nextBtnRef.current?.click();
-            }, 2000);
+            }, 200000);
         };
 
         setSlider();

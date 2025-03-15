@@ -291,6 +291,9 @@
                     }
                 }
             }
+            & .indicators{
+                top: 65%;
+            }
         }
     }
 }
@@ -299,30 +302,43 @@
         display: none;
     }
     .animated-banner{
-        --w-column: 50px;
+        --w-column: 70px;
     }
     .animated-banner{
         & .carousel{
             height: 100vh;
             & .list{
+                top: 70px;
                 & .item{
                     & .content{
-                        justify-content: end;
+                        justify-content: start;
                         padding-bottom: 100px;
                         & h2{
-                            font-size: 2em;
+                            font-size: 3em;
                         }
                     }
                     & figure{
                         width: 110%;
                         transform: translateY(0);
-                        top: 100px;
-                        left: -30px;
+                        top: 70px;
+                        left: -14px;
+                        & img{
+                            width: 100%;
+                        }
                     }
                 }
+                &::after{
+                    content: none;
+                }
+                &::before{
+                    content: none;
+                }
+            }
+            & .arrows{
+                display: none;
             }
             & .indicators{
-                top: 80%;
+                top: 65%;
                 & .number{
                     font-size: 10em;
                     transform: translateX(50px);
