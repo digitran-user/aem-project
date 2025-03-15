@@ -33,7 +33,7 @@ export const Banner: React.FC<BannerProps> = ({
   return (
     <div className="relative overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        {overlay && <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>}
+        {/* {overlay && <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>} */}
       </div>
       <div
         className={`relative z-10 px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col ${alignmentClasses[alignment]}`}

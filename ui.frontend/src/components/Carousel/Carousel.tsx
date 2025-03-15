@@ -67,7 +67,7 @@ export const Carousel: React.FC<CarouselProps> = ({
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  {item.title && <h3 className="text-lg font-semibold mb-2">{item.title}</h3>}
+                  {item.title && <h3 className="text-center text-lg font-semibold mb-2">{item.title}</h3>}
                   {item.description && <p className="text-gray-600" dangerouslySetInnerHTML={{__html: item.description}} />}
                 </div>
               </a>
