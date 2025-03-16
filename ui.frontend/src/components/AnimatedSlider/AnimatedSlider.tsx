@@ -30,7 +30,7 @@ export const AnimatedSlider: React.FC<AnimatedSlideProps> = ({
                         <p><b>Trusted Brand</b></p>
                         <p>World most trusted motor brand</p>
                     </div> */}
-                    <div className="model" style={{backgroundImage: `url(${centerImage})`}}></div>
+                  {centerImage && <div className="model" style={{backgroundImage: `url(${centerImage})`}}></div>}
                 </div>
             </div>
         </div>
