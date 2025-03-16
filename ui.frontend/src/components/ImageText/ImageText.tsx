@@ -37,7 +37,7 @@ export const ImageText: React.FC<ImageTextProps> = ({
     bottom: 'end',
   }
   return (
-    <div className={`bg-${backgroundColor}`}>
+    <div style={{backgroundColor: backgroundColor}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`flex flex-col ${imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"} items-${contentPositionArray[contentPosition]} py-16 lg:py-24`}

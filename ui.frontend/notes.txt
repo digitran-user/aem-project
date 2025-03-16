@@ -1,0 +1,10 @@
+https://www.material-tailwind.com/docs/react/modal
+https://www.tailwindcss-animated.com/configurator.html?animation=ping&count=once
+https://tailblocks.cc/
+https://www.npmjs.com/package/react-player
+https://www.hyperui.dev/components/marketing/ctas
+https://www.lundevweb.com/
+https://rombo.co/tailwind/
+https://kutty.netlify.app/components/empty-state/
+https://www.geeksforgeeks.org/create-modal-dialogs-ui-using-react-and-tailwind-css/
+https://www.npmjs.com/package/@fortawesome/fontawesome-free
