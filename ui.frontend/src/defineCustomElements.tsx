@@ -21,6 +21,7 @@ import { Spacer } from "./components/Spacer/Spacer"
 import { Video } from "./components/Video/Video"
 import { AnimatedBanner } from "./components/AnimatedBanner/AnimatedBanner";
 import { AnimatedSlider } from "./components/AnimatedSlider/AnimatedSlider";
+import { Gallery } from "./components/Gallery/Gallery";
 // Helper function to create web components from React components
 function createWebComponent(ReactComponent: React.ComponentType<any>, tagName: string) {
   class WebComponent extends HTMLElement {
@@ -89,6 +90,7 @@ export function defineCustomElements() {
     createWebComponent(Video, "web-video");
     createWebComponent(AnimatedBanner, "web-animated-banner");
     createWebComponent(AnimatedSlider, "web-animated-slider");
+    createWebComponent(Gallery, "web-gallery");
     console.log("All web components defined successfully");
   } catch (error) {
     console.error("Error defining web components:", error);
