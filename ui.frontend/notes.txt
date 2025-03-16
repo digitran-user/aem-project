@@ -8,3 +8,6 @@ https://rombo.co/tailwind/
 https://kutty.netlify.app/components/empty-state/
 https://www.geeksforgeeks.org/create-modal-dialogs-ui-using-react-and-tailwind-css/
 https://www.npmjs.com/package/@fortawesome/fontawesome-free
+https://animation.ibelick.com/
+https://onlineminitools.com/tailwind-css-gradient-generator
+https://www.npmjs.com/package/react-owl-carousel

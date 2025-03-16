@@ -28,7 +28,7 @@ export const Video: React.FC<VideoProps> = ({
                     <strong className="font-medium">{videoTitle}</strong>
                 </div> }
             </div>
-            <div className="h-screen flex items-center
+            <div className="flex items-center
                         justify-center">
                 <VideoModal videoUrl={videoUrl} isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
             </div>
