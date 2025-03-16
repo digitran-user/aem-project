@@ -11,3 +11,6 @@ https://www.npmjs.com/package/@fortawesome/fontawesome-free
 https://animation.ibelick.com/
 https://onlineminitools.com/tailwind-css-gradient-generator
 https://www.npmjs.com/package/react-owl-carousel
+https://react-icons.github.io/react-icons/
+
+mvn clean install -PautoInstallPackage -DskipTests

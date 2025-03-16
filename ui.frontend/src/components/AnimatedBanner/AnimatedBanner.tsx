@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import "./AnimatedBanner.css";
 
 export interface AnimatedBannerItem {
@@ -82,11 +83,11 @@ export const AnimatedBanner: React.FC<AnimatedBannerProps> = ({ itemList = [] })
                     ))}
                 </div>
                 <div className="arrows">
-                    <button ref={prevBtnRef} id="prev">
-                        <i className="fa-solid fa-chevron-left" />
+                    <button ref={prevBtnRef} id="prev" className="flex justify-center items-center">
+                        <MdArrowBackIos />
                     </button>
-                    <button ref={nextBtnRef} id="next">
-                        <i className="fa-solid fa-chevron-right" />
+                    <button ref={nextBtnRef} id="next" className="flex justify-center items-center">
+                        <MdArrowForwardIos />
                     </button>
                 </div>
                 <div className="indicators" ref={indicatorRef}>
