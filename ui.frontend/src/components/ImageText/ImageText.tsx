@@ -18,13 +18,13 @@ export interface ImageTextProps {
 
 export const ImageText: React.FC<ImageTextProps> = ({
   image = {
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Feature image",
+    src: "",
+    alt: "",
   },
-  title = "Feature Title",
-  content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
+  title = "",
+  content = "",
   cta = {
-    label: "Learn More",
+    label: "",
     url: "#",
   },
   contentPosition = "center",
@@ -38,21 +38,21 @@ export const ImageText: React.FC<ImageTextProps> = ({
   }
   return (
     <div style={{backgroundColor: backgroundColor}}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-4">
         <div
-          className={`flex flex-col ${imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"} items-${contentPositionArray[contentPosition]} py-16 lg:py-24`}
+          className={`flex flex-col ${imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"} items-${contentPositionArray[contentPosition]} py-6 lg:py-12`}
         >
           <div className="w-full lg:w-1/2 lg:pr-8 lg:pl-8">
-            <img
-              src={image.src || "/placeholder.svg"}
+          {image && image.hasOwnProperty("src") && <img
+              src={image.src}
               alt={image.alt}
               className="transition-transform duration-300 hover:scale-110 rounded-lg shadow-xl w-full h-auto object-cover"
-            />
+            /> }
           </div>
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:pr-8 lg:pl-8">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{title}</h2>
-            <p className="mt-4 text-lg text-gray-500" dangerouslySetInnerHTML={{__html: content}} />
-            {cta && (
+           {title && <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{title}</h2> }
+           {content && <p className="mt-4 text-lg text-gray-500" dangerouslySetInnerHTML={{__html: content}} /> }
+            {cta && cta.hasOwnProperty("label") && (
               <div className="mt-8">
                 <a
                   href={cta.url}

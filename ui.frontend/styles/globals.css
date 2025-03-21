@@ -83,7 +83,17 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
+.text{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  line-height: 25px !important;
+}
+.cmp-tabs__tablist{
+  margin-bottom: 10px !important;
+}
+.cmp-tabs__tab--active{
+  border-bottom: 2px solid #ddd;
+}
 @layer base {
   * {
     @apply border-border;
